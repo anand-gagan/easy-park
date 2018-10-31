@@ -1,0 +1,119 @@
+<html>
+     <head>
+     	     <meta charset="utf-8">
+     	     <link rel="stylesheet" href="styles.css">
+   			 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			 <title>PAS- Parking Assistance System</title>
+     </head>
+     <body>
+			            <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+			  <a class="navbar-brand" href="#"><img src="logo.png" class="img-fluid" width="60"></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav ml-auto">
+			      <li class="nav-item active">
+			        <a class="nav-link  margin-left" href="#">Home <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item active">
+			        <a class="nav-link  margin-left" href="#" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
+			      </li>
+			      <li class="nav-item active">
+			        <a class="nav-link  margin-left" href="#">About</a>
+
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+		<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alert" style="display: none ; width: 40%" role="alert">
+  <strong>Congratulations</strong>   Your Slot is Booked!!!!!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div><center>
+			<div class="container">
+			<div class="row">
+				<div class="col-md-12 paragraph">
+					<b>Parking Assistance System</b><br>
+					<i>An easy way to park...</i>
+				</div>
+			</div>
+		</div><br>
+<div class="container">
+			<div class="row abcd">
+				<div class="col-md-12 paragraph">
+					<marquee>Plz. Book Your Slot</marquee>
+					<div class="slot" id="a1">+</div>
+					<div class="slot" id="a2">+</div>
+					<div class="slot" id="a3">+</div>
+					<div class="slot" id="a4">+</div>
+					<div class="slot" id="a5">+</div>
+					<div class="slot" id="a6">+</div>
+					<div class="slot" id="a7">+</div>
+					<div class="slot" id="a8">+</div>
+
+					<div class="road"></div> 
+					
+					<div class="slot" id="b1">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					
+					<div class="road"></div>
+					
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+					<div class="slot">+</div>
+				</div>
+			</div>
+		</div>
+			<div class="row">
+				<div class="col-md-12 footer">
+					&copy; Copyright Gagan & Nitin
+				</div>
+			</div>
+		           
+			 
+
+			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Admin Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="#">
+        	<input  type="text" class="form-control" placeholder="Enter Username" required><br>
+        	<input type="password" class="form-control" placeholder="Enter Password" required><br>
+        	<button type="submit" class="btn btn-outline-secondary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/script.js"></script>
+<!-- <script>
+function book(id) {
+	document.getElementById(id).style="background-color : red"; 
+}
+</script>	 -->    
+     </body>
+</html>
