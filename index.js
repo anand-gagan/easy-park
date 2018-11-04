@@ -34,6 +34,17 @@ var Slot = mongoose.model('Slot', SlotSchema);
 app.get('/',function(req, res){
 	res.render('PAShome');
 });
+app.post('/checkbooked',function(req, res){
+	//var k = req.body.key;
+    Slot.find({},function (err, success) {
+        if(success.length>0)
+          res.send(success);
+        else
+          res.send('unavailable');
+        if (err) 
+        	return console.error(err);
+    });
+});
 
 app.post('/book-slot', function(req, res) {
 		console.log("Here is request");
