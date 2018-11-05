@@ -78,9 +78,9 @@ app.post('/book-slot', function(req, res) {
 			}
 		});
 	});
-	app.get('/admin', function(req, res) {
-		res.render('dashboard');
-	});
+	// app.get('/admin', function(req, res) {
+	// 	res.render('dashboard');
+	// });
 
 app.get('/*',function(req, res){
 	res.send("404");
