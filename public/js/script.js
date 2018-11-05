@@ -19,9 +19,12 @@ $(document).ready(function() {
 
 	///sdfg
 	$('.admin').click(function() {
-		//console.log("asdf");
+	
 // var db = require('./db')(app);
 var idx=$(this).attr('id');
+var xx = document.getElementById(idx);
+
+        if( xx.style.backgroundColor == "blue")
 	     $.ajax ({
 			type: 'POST',
 			url: '/change-status',
@@ -37,7 +40,7 @@ var idx=$(this).attr('id');
 						console.log('admin ghnta!');
 			        }
 		       });
-        
+        });
 ///sdfghsdfgh
 
 
@@ -105,5 +108,4 @@ else if(checkone()==1)
 
 
 
-});
 });

@@ -47,6 +47,7 @@ app.post('/checkbooked',function(req, res){
 });
 app.post('/change-status',function(req, res){
 	var k = req.body.ide;
+	console.log("asdfghjhfdsdgh document deleted");
 	var myquery = { slotId : k };
 	Slot.deleteOne(myquery, function(err, obj) {
     if (err) throw err;
