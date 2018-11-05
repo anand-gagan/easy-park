@@ -45,6 +45,14 @@ app.post('/checkbooked',function(req, res){
         	return console.error(err);
     });
 });
+app.post('/change-status',function(req, res){
+	var k = req.body.ide;
+	var myquery = { slotId : k };
+	Slot.deleteOne(myquery, function(err, obj) {
+    if (err) throw err;
+    console.log("1 document deleted");
+  });
+});
 
 app.post('/book-slot', function(req, res) {
 		console.log("Here is request");

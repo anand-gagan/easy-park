@@ -16,6 +16,32 @@ $(document).ready(function() {
 				console.log('Error Occured bro!');
 			}
 		});
+
+	///sdfg
+	$('.admin').click(function() {
+		//console.log("asdf");
+// var db = require('./db')(app);
+var idx=$(this).attr('id');
+	     $.ajax ({
+			type: 'POST',
+			url: '/change-status',
+		   	data: {ide : idx, status: 'red'},
+            // id='#'+id,
+			success: function(data) {
+				 var x = document.getElementById("alertx");
+        		x.style.display = "block";
+				//alert("Your Slot is Booked!!!!!");
+				console.log('admin ki jai ho!');
+						},
+						error: function(data) {
+						console.log('admin ghnta!');
+			        }
+		       });
+        
+///sdfghsdfgh
+
+
+
 	$('.slot').click(function() {
 		//console.log("asdf");
 // var db = require('./db')(app);
@@ -79,4 +105,5 @@ else if(checkone()==1)
 
 
 
+});
 });
