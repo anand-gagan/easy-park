@@ -57,7 +57,7 @@ app.post('/change-status',function(req, res){
   });
 });
 app.post('/admin-page',function(req, res){
-	 if(req.body.user[name]== "admin")
+	 if(req.body.nam == "admin" && req.body.pass == "admin123")
 	console.log('logged in successfulluy');
 		res.render('dashboard');
 });
