@@ -44,6 +44,13 @@ font-size: 30px;
 	display: inline-block;
 	margin: 10px;
 }
+.admin {
+	height: 8rem;
+	width: 6rem;
+	border: 3px solid #fff;
+	display: inline-block;
+	margin: 10px;
+}
 .slot:hover {
 	background-color: green;
 	color: #fff;

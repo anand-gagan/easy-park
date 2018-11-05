@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	var flag=0;
+	reloadin();
+	function reloadin(cid){
+        
 	$.ajax ({
 			type: 'POST',
 			url: '/checkbooked',
@@ -9,6 +12,7 @@ $(document).ready(function() {
 				for(var i in data){
 					console.log(data[i].slotId+"     break     ");
 					 var xx = document.getElementById(data[i].slotId);
+					 if(xx.style.backgroundColor != "red")
          xx.style.backgroundColor = "blue";
 				}
 			},
@@ -16,8 +20,11 @@ $(document).ready(function() {
 				console.log('Error Occured bro!');
 			}
 		});
-
-	///sdfg
+       }
+	$('.container').click(function() {
+		reloadin();
+	});
+			///sdfg
 	$('.admin').click(function() {
 	
 // var db = require('./db')(app);
@@ -31,15 +38,23 @@ var xx = document.getElementById(idx);
 		   	data: {ide : idx, status: 'red'},
             // id='#'+id,
 			success: function(data) {
-				 var x = document.getElementById("alertx");
-        		x.style.display = "block";
+				// var x = document.getElementById("alertady");
+        		//x.style.display = "block";
+        		document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style=" width: 40%" role="alert"><strong>Congratulations</strong>   This Slot is Vacant NOW!!!!!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>';
 				//alert("Your Slot is Booked!!!!!");
 				console.log('admin ki jai ho!');
+				xx.style.backgroundColor = "";
 						},
 						error: function(data) {
 						console.log('admin ghnta!');
 			        }
 		       });
+	 else
+	 {
+	 	// var x = document.getElementById("alertadn");
+   //      		x.style.display = "block";
+   document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertadn" style=" width: 40%" role="alert"><strong>Sorry  .</strong>   This slot is already vacant!!!!!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>'
+	 }
         });
 ///sdfghsdfgh
 
@@ -83,8 +98,9 @@ var xx = document.getElementById(idx);
 		   	data: {ide : id, status: 'red'},
             // id='#'+id,
 			success: function(data) {
-				 var x = document.getElementById("alertx");
-        		x.style.display = "block";
+				document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style=" width: 40%" role="alert"><strong>Congratulations</strong>   Your Slot is Booked!!!!!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>';
+				 //var x = document.getElementById("alertx");
+        		//x.style.display = "block";
 				//alert("Your Slot is Booked!!!!!");
 				console.log('Ho gya bro!');
 						},
@@ -96,12 +112,10 @@ var xx = document.getElementById(idx);
 else if(checkone()==1)
 {
 	//alert("You cannot Book another slot ,Your Slot is already Booked!!!!!");
-	 var x = document.getElementById("alerty");
-        x.style.display = "block";
+	 document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alerty" style=" width: 40% " role="alert"><strong>SORRY</strong>      You cannot Book another slot ,Your Slot is already Booked!!!!!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>'
 }
  if(flag==2){
- var x = document.getElementById("alertz");
-        x.style.display = "block";	
+document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alertz" style=" width: 40% " role="alert"><strong>SORRY!  </strong> This slot is already Booked!!!!!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></center>'
 }
 	});
 

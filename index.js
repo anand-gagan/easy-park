@@ -51,10 +51,16 @@ app.post('/change-status',function(req, res){
 	var myquery = { slotId : k };
 	Slot.deleteOne(myquery, function(err, obj) {
     if (err) throw err;
+    else
+    	res.send(obj);
     console.log("1 document deleted");
   });
 });
-
+app.post('/admin-page',function(req, res){
+	 if(req.body.user[name]== "admin")
+	console.log('logged in successfulluy');
+		res.render('dashboard');
+});
 app.post('/book-slot', function(req, res) {
 		console.log("Here is request");
 		var id = req.body.ide;

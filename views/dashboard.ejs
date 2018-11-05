@@ -21,9 +21,9 @@
 			      <li class="nav-item active">
 			        <a class="nav-link  margin-left" href="#">Home <span class="sr-only">(current)</span></a>
 			      </li>
-			      <li class="nav-item active">
+			     <!--  <li class="nav-item active">
 			        <a class="nav-link  margin-left" href="#" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
-			      </li>
+			      </li> -->
 			      <li class="nav-item active">
 			        <a class="nav-link  margin-left" href="#" data-toggle="modal" data-target="#exampleModal">About</a>
 
@@ -53,28 +53,25 @@
   </div>
 </div>
 <!-- about -->
-		<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style="display: none ; width: 40%" role="alert">
-  <strong>Congratulations</strong>   Your Slot is Booked!!!!!
+<div id="notbar"></div>
+<!-- <center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertadn" style=" width: 40%" role="alert">
+  <strong>Sorry  .</strong>   This slot is already vacant!!!!!
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div><center>
-	<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alerty" style="display: none ; width: 40% " role="alert">
-  <strong>SORRY</strong>      You cannot Book another slot ,Your Slot is already Booked!!!!!
+
+<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertady" style="display: none ; width: 40%" role="alert">
+  <strong>congo.</strong>   This slot is now vacant!!!!!
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-</div><center>
-	<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alertz" style="display: none ; width: 40% " role="alert">
-  <strong>SORRY!  </strong> This slot is already Booked!!!!!
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div><center>
+</div><center> -->
+
 			<div class="container">
 			<div class="row">
 				<div class="col-md-12 paragraph">
-					<b>Parking Assistance System   Admin</b><br>
+					<b>Parking Assistance System  <br> Admin Portal</b><br>
 					<i>An easy way to park...</i>
 				</div>
 			</div>
@@ -83,36 +80,36 @@
 			<div class="row abcd">
 				<div class="col-md-12 paragraph">
 					<marquee>Plz. Book Your Slot</marquee>
-					<div class="slot admin" id="a1">+</div>
-					<div class="slot admin" id="a2">+</div>
-					<div class="slot admin" id="a3">+</div>
-					<div class="slot admin" id="a4">+</div>
-					<div class="slot" id="a5">+</div>
-					<div class="slot" id="a6">+</div>
-					<div class="slot" id="a7">+</div>
-					<div class="slot" id="a8">+</div>
+					<div class="admin" id="a1">+</div>
+					<div class="admin" id="a2">+</div>
+					<div class="admin" id="a3">+</div>
+					<div class="admin" id="a4">+</div>
+					<div class="admin" id="a5">+</div>
+					<div class="admin" id="a6">+</div>
+					<div class="admin" id="a7">+</div>
+					<div class="admin" id="a8">+</div>
 
 					<div class="road"></div> 
 					
-					<div class="slot" id="a9">+</div>
-					<div class="slot" id="a10">+</div>
-					<div class="slot" id="a11">+</div>
-					<div class="slot" id="a12">+</div>
-					<div class="slot" id="a13">+</div>
-					<div class="slot" id="a14">+</div>
-					<div class="slot" id="a15">+</div>
-					<div class="slot" id="a16">+</div>
+					<div class="admin" id="a9">+</div>
+					<div class="admin" id="a10">+</div>
+					<div class="admin" id="a11">+</div>
+					<div class="admin" id="a12">+</div>
+					<div class="admin" id="a13">+</div>
+					<div class="admin" id="a14">+</div>
+					<div class="admin" id="a15">+</div>
+					<div class="admin" id="a16">+</div>
 					
 					<div class="road"></div>
 					
-					<div class="slot"  id="a17">+</div>
-					<div class="slot" id="a18">+</div>
-					<div class="slot" id="a19">+</div>
-					<div class="slot" id="a20">+</div>
-					<div class="slot" id="a21">+</div>
-					<div class="slot" id="a22">+</div>
-					<div class="slot" id="a23">+</div>
-					<div class="slot" id="a24">+</div>
+					<div class="admin"  id="a17">+</div>
+					<div class="admin" id="a18">+</div>
+					<div class="admin" id="a19">+</div>
+					<div class="admin" id="a20">+</div>
+					<div class="admin" id="a21">+</div>
+					<div class="admin" id="a22">+</div>
+					<div class="admin" id="a23">+</div>
+					<div class="admin" id="a24">+</div>
 				</div>
 			</div>
 		</div>
@@ -134,10 +131,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="#">
+        <form method="post" action="/admin-page">
         	<input  type="text" class="form-control" placeholder="Enter Username" required><br>
         	<input type="password" class="form-control" placeholder="Enter Password" required><br>
-        	<button type="submit" class="btn btn-outline-secondary">Login</button>
+        	<button type="submit"  class="btn btn-outline-secondary">Login</button>
         </form>
       </div>
     </div>
