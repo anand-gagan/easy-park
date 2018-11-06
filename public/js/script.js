@@ -25,6 +25,11 @@ $(document).ready(function() {
 		reloadin();
 	});
 			///sdfg
+
+
+
+
+
 	$('.admin').click(function() {
 	
 // var db = require('./db')(app);
@@ -98,7 +103,7 @@ var xx = document.getElementById(idx);
 		   	data: {ide : id, status: 'red'},
             // id='#'+id,
 			success: function(data) {
-				document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style=" width: 40%" role="alert"><strong>Congratulations</strong>   Your Slot is Booked!!!!!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>';
+				document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style=" width: 40%" role="alert"><strong>Congratulations</strong>   Your Slot is Booked!!!!! <strong>Booking id :- '+data+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>';
 				 //var x = document.getElementById("alertx");
         		//x.style.display = "block";
 				//alert("Your Slot is Booked!!!!!");
@@ -120,6 +125,25 @@ document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1
 	});
 
 
+$('#bookform').submit(function(event) {
+		event.preventDefault();
+		var x=$('#bookid').val();
+		console.log(x);
+	$.ajax ({
+			type: 'POST',
+			url: '/returnslot',
+		   	data: {bookid : x},
+            // id='#'+id,
+			success: function(data) {
+				document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alertz" style=" width: 40% " role="alert">the slot with booking id :- <strong>'+x+'  </strong> was '+ data+'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></center>'
+				console.log("the slot searched was "+data);
+			},
+			error: function(data) {
+				console.log('Error Occured bro!');
+			}
+		});
+
+	});
 
 
 });

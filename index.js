@@ -26,7 +26,8 @@ var SlotSchema = mongoose.Schema({
 	slotStatus: {
 		type: String,
 		default: 'red'
-	}
+	},
+	bookingid: String,
 });
 
 var Slot = mongoose.model('Slot', SlotSchema);
@@ -63,21 +64,48 @@ app.post('/admin-page',function(req, res){
 });
 app.post('/book-slot', function(req, res) {
 		console.log("Here is request");
+		function makeId(){
+		var text = "";
+    	var combination = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    	for(var i=0; i < 5; i++)
+        	text += combination.charAt(Math.floor(Math.random() * combination.length));
+    	return text;
+	}
+
+	var bookid=makeId();
 		var id = req.body.ide;
 		console.log(id);
 		var newSlot = new Slot({
 			slotId: id,
-			slotStatus: 'red'
+			slotStatus: 'red',
+			bookingid: bookid
 		});
 		newSlot.save(function(err, data) {
 			if(err)
 				throw err;
 			else if(data) {
-				console.log('slot ' + id + ' booked');
-				res.send(data);
+				console.log('slot ' + id + ' booked  with booking id '+ bookid);
+				res.send(bookid);
 			}
 		});
 	});
+	app.post('/returnslot', function(req, res) {
+		console.log("mein ayaha pahucnh gya");
+		var k=req.body.bookid;
+		var myquery = {bookingid : k};
+		Slot.find(myquery,function (err, success) {
+			 if (err) 
+			 	console.log("error  was searched ");
+    else{
+    	if(success.length>0)
+    	res.send(success[0].slotId);
+    else{
+    	res.send("Not Found");
+    }
+    console.log(k+ "  was searched succesfully");
+}
+	});
+});
 	// app.get('/admin', function(req, res) {
 	// 	res.render('dashboard');
 	// });
