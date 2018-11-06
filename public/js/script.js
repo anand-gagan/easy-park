@@ -40,7 +40,7 @@ var xx = document.getElementById(idx);
 			success: function(data) {
 				// var x = document.getElementById("alertady");
         		//x.style.display = "block";
-        		document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style=" width: 40%" role="alert"><strong>Congratulations</strong>   This Slot is Vacant NOW!!!!!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>';
+        		document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style="sticky:top; width: 40%" role="alert"><strong>Congratulations</strong>   This Slot is Vacant NOW!!!!!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>';
 				//alert("Your Slot is Booked!!!!!");
 				console.log('admin ki jai ho!');
 				xx.style.backgroundColor = "";
