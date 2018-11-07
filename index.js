@@ -28,6 +28,7 @@ var SlotSchema = mongoose.Schema({
 		default: 'red'
 	},
 	bookingid: String,
+	bname: String,
 });
 
 var Slot = mongoose.model('Slot', SlotSchema);
@@ -74,17 +75,19 @@ app.post('/book-slot', function(req, res) {
 
 	var bookid=makeId();
 		var id = req.body.ide;
+		var bookn=req.body.name;
 		console.log(id);
 		var newSlot = new Slot({
 			slotId: id,
 			slotStatus: 'red',
-			bookingid: bookid
+			bookingid: bookid,
+			bname: bookn
 		});
 		newSlot.save(function(err, data) {
 			if(err)
 				throw err;
 			else if(data) {
-				console.log('slot ' + id + ' booked  with booking id '+ bookid);
+				console.log('slot ' + id + ' booked  with booking id '+ bookid+'by the name of '+bookn);
 				res.send(bookid);
 			}
 		});
@@ -98,7 +101,7 @@ app.post('/book-slot', function(req, res) {
 			 	console.log("error  was searched ");
     else{
     	if(success.length>0)
-    	res.send(success[0].slotId);
+    	res.send(success);
     else{
     	res.send("Not Found");
     }
@@ -106,10 +109,27 @@ app.post('/book-slot', function(req, res) {
 }
 	});
 });
+
+	app.post('/refresh-data', function(req, res) {
+		//console.log("mein ayaha pahucnh gya");
+		///var k=req.body.bookid;
+		//var myquery = {bookingid : k};
+		Slot.find({},function (err, success) {
+			 if (err) 
+			 	console.log("error  was searched ");
+    else{
+    res.send(success);
+    }
+    
+
+	});
+});
 	// app.get('/admin', function(req, res) {
 	// 	res.render('dashboard');
 	// });
-
+app.get('/adminshow',function(req, res){
+	res.render('adminviewer');
+});
 app.get('/*',function(req, res){
 	res.send("404");
 });

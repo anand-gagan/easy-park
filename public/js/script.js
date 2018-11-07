@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	
 	var flag=0;
 	reloadin();
 	function reloadin(cid){
@@ -62,6 +63,36 @@ var xx = document.getElementById(idx);
 	 }
         });
 ///sdfghsdfgh
+$('#refresh').click(function() {
+	console.log("refresh");
+ $.ajax ({
+			type: 'POST',
+			url: '/refresh-data',
+		   	data: {},
+            // id='#'+id,
+			success: function(data) {
+				var s="";
+					s+='<table id="customers" ><tr><th>SLOTID</th><th>name</th><th>bookingId</th></tr>';
+					//document.getElementById("tablu").innerHTML+=('<tr><td>'+data[0].slotId+'</td><td>'+data[0].bname+'</td><td>'+data[0].bookingid+'</td></tr><br>');
+				for(var i in data)
+				{
+					s+='<tr><td>';
+					s+=data[i].slotId;
+					s+='</td><td>';
+					s+=data[i].bname;
+					s+='</td><td>';
+					s+=data[i].bookingid;
+					s+='</td></tr>';
+				}
+				s+='</table>';
+				document.getElementById("tablu").innerHTML=s;
+						},
+						error: function(data) {
+				//console.log('admin ghnta!');
+			        }
+		       });
+
+});
 
 
 
@@ -100,10 +131,10 @@ var xx = document.getElementById(idx);
 		$.ajax ({
 			type: 'POST',
 			url: '/book-slot',
-		   	data: {ide : id, status: 'red'},
+		   	data: {ide : id, status: 'red',name: name},
             // id='#'+id,
 			success: function(data) {
-				document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style=" width: 40%" role="alert"><strong>Congratulations</strong>   Your Slot is Booked!!!!! <strong>Booking id :- '+data+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>';
+				document.getElementById("notbar").innerHTML+='<center>	<div class="alert alert-warning alert-dismissible fade show bg-light" id="alertx" style=" width: 40%" role="alert"><strong>Congratulations '+name+',  </strong>   Your Slot is Booked!!!!! <strong>Booking id :- '+data+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><center>';
 				 //var x = document.getElementById("alertx");
         		//x.style.display = "block";
 				//alert("Your Slot is Booked!!!!!");
@@ -135,7 +166,7 @@ $('#bookform').submit(function(event) {
 		   	data: {bookid : x},
             // id='#'+id,
 			success: function(data) {
-				document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alertz" style=" width: 40% " role="alert">the slot with booking id :- <strong>'+x+'  </strong> was '+ data+'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></center>'
+				document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alertz" style=" width: 40% " role="alert">the slot with booking id :- <strong>'+x+'  </strong> was '+ data[0].slotId+' is booked by the name of <strong>'+data[0].bname+'<strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></center>'
 				console.log("the slot searched was "+data);
 			},
 			error: function(data) {
@@ -145,5 +176,13 @@ $('#bookform').submit(function(event) {
 
 	});
 
+ // code here
 
+var adminflag=0;
+	var path = window.location.pathname;
+var pagee = path.split("/").pop();
+if(pagee == "")
+{
+	var name=prompt("Enter your full name " + pagee);
+}
 });

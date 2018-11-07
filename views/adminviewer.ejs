@@ -1,6 +1,7 @@
 <html>
      <head>
      	     <meta charset="utf-8">
+     	     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
      	     <link rel="stylesheet" href="styles.css">
    			 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -73,58 +74,25 @@
 				<div class="col-md-12 paragraph">
 					<b>Parking Assistance System  <br> Admin Portal</b><br>
 					<i>An easy way to park...</i>
+					<br>
+					<i >click on the below button to get the data</i>
 				</div>
 			</div>
 		</div><div class="col-md-12 ggg" >
-				<center><note>click to vacant the slot</note>
-				</div></center><br>
-				<center> <form  name="bookform" id="bookform">
-        	<input  type="text" class=" efgh " name="bookid" id="bookid" placeholder="Enter Bookid" required>
-        	
-        	<button type="submit"  class="btn btn-outline-secondary">Find</button>
+				
+				<br>
+				<br>
+<center>
+<button name="refresh"  class="btn btn-outline-secondary nav-link" id="refresh">Show all/Refresh</button>
+</center>
+<br>
+<br><div class="container">
+<div class="row" name="tablu" id="tablu">
+	<br>
 
-        </form></center>
-       <center> <form action="/adminshow">
-       	<p style="color:white ; height :50px; opacity :0.5"> <b>click here to watch all bookings together</b></p>
-                	<button   class="btn btn-outline-secondary">all bookings</button>
-                </form></center>
-<div class="container">
-			<div class="row abcd">
-				<div class="col-md-12 paragraph">
-					<marquee>Plz. Book Your Slot</marquee>
-					<div class="admin" id="a1">+</div>
-					<div class="admin" id="a2">+</div>
-					<div class="admin" id="a3">+</div>
-					<div class="admin" id="a4">+</div>
-					<div class="admin" id="a5">+</div>
-					<div class="admin" id="a6">+</div>
-					<div class="admin" id="a7">+</div>
-					<div class="admin" id="a8">+</div>
+</div>
+</div>
 
-					<div class="road"></div> 
-					
-					<div class="admin" id="a9">+</div>
-					<div class="admin" id="a10">+</div>
-					<div class="admin" id="a11">+</div>
-					<div class="admin" id="a12">+</div>
-					<div class="admin" id="a13">+</div>
-					<div class="admin" id="a14">+</div>
-					<div class="admin" id="a15">+</div>
-					<div class="admin" id="a16">+</div>
-					
-					<div class="road"></div>
-					
-					<div class="admin"  id="a17">+</div>
-					<div class="admin" id="a18">+</div>
-					<div class="admin" id="a19">+</div>
-					<div class="admin" id="a20">+</div>
-					<div class="admin" id="a21">+</div>
-					<div class="admin" id="a22">+</div>
-					<div class="admin" id="a23">+</div>
-					<div class="admin" id="a24">+</div>
-				</div>
-			</div>
-		</div>
 			<div class="row">
 				<div class="col-md-12 footer">
 					&copy; Copyright Gagan Anand & Nitin Pahwa
@@ -133,25 +101,7 @@
 		           
 			 
 
-			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Admin Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="/admin-page">
-        	<input  type="text" class="form-control" placeholder="Enter Username" required><br>
-        	<input type="password" class="form-control" placeholder="Enter Password" required><br>
-        	<button type="submit"  class="btn btn-outline-secondary">Login</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+		
 <script src="/js/script.js"></script>
 <!-- <script>
 function book(id) {
