@@ -12,11 +12,30 @@ $(document).ready(function() {
 			success: function(data) {
 				for(var i in data){
 					console.log(data[i].slotId+"     break     ");
-					 var xx = document.getElementById(data[i].slotId);
-					 if(xx.style.backgroundColor != "red")
-         xx.style.backgroundColor = "blue";
 				}
-			},
+				for(var i=1; i<=24; i++){
+        	var  cid='a'+i;
+        	var flag=0;
+        		 var xy = document.getElementById(cid);
+         
+				for(var j in data){
+					//console.log(data[i].slotId+"     break     ");
+					 if(data[j].slotId == cid)
+					 {
+					 	if(xy.style.backgroundColor != "red" )
+         {
+         xy.style.backgroundColor = "blue";
+         }
+         flag=1;
+     }
+				}
+				if(xy.style.backgroundColor == "blue"  && flag != 1)
+                xy.style.backgroundColor = "";  
+                if(xy.style.backgroundColor == "red"  && flag != 1)
+                xy.style.backgroundColor = "";  
+
+		}
+		},
 			error: function(data) {
 				console.log('Error Occured bro!');
 			}
@@ -93,8 +112,27 @@ $('#refresh').click(function() {
 		       });
 
 });
+ $('.slot').mouseenter(function() {
+ 	var id = $(this).attr('id');
+		var  cid='';
+        		 var xx = document.getElementById(id);
+         if(xx.style.backgroundColor == 'blue' )
+         	xx.innerHTML="X";
+         if(xx.style.backgroundColor == 'red' )
+         	xx.innerHTML="B";
+         if(xx.style.backgroundColor == '' )
+         	xx.innerHTML="V";
+         xx.style.opacity=1;
+console.log(xx.style.opacity);
+   });
 
-
+ $('.slot').mouseout(function() {
+ 	var id = $(this).attr('id');
+		var  cid='';
+        		 var xx = document.getElementById(id);
+         //if(xx.style.backgroundColor == 'blue' )
+         	xx.innerHTML="+";
+});
 
 	$('.slot').click(function() {
 		//console.log("asdf");

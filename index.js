@@ -38,6 +38,7 @@ app.get('/',function(req, res){
 });
 app.post('/checkbooked',function(req, res){
 	//var k = req.body.key;
+	
     Slot.find({},function (err, success) {
         if(success.length>0)
           res.send(success);
