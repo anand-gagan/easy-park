@@ -222,5 +222,6 @@ var pagee = path.split("/").pop();
 if(pagee == "")
 {
 	var name=prompt("Enter your full name " + pagee);
+	if(name.length > 15) name = name.substring(0,15)+'.....  ';
 }
 });
