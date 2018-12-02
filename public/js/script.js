@@ -31,8 +31,7 @@ $(document).ready(function() {
 				}
 				if(xy.style.backgroundColor == "blue"  && flag != 1)
                 xy.style.backgroundColor = "";  
-                if(xy.style.backgroundColor == "red"  && flag != 1)
-                xy.style.backgroundColor = "";  
+                
 
 		}
 		},
