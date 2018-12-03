@@ -136,7 +136,7 @@ console.log(xx.style.opacity);
 	$('.slot').click(function() {
 		//console.log("asdf");
 // var db = require('./db')(app);
-
+          reloadin();
 		function checkone(cid){
          flag=0;
     	for(var i=1; i<=24; i++){
