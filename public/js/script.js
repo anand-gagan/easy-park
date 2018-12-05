@@ -203,8 +203,13 @@ $('#bookform').submit(function(event) {
 		   	data: {bookid : x},
             // id='#'+id,
 			success: function(data) {
-				document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alertz" style=" width: 40% " role="alert">the slot with booking id :- <strong>'+x+'  </strong> was '+ data[0].slotId+' is booked by the name of <strong>'+data[0].bname+'<strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></center>'
-				console.log("the slot searched was "+data);
+				// var gag=data[0].name.length;
+				// console.log(gag);
+				if(data[0].slotId){
+				document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alertz" style=" width: 40% " role="alert">The slot with booking id <strong>'+x+'  </strong> was '+ data[0].slotId+' is booked by the name of <strong>'+data[0].bname+'<strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></center>'
+				}else{
+					document.getElementById("notbar").innerHTML+='<center>	<div class="alert  alert1 alert-warning alert-dismissible fade show bg-light" id="alertz" style=" width: 40% " role="alert">The slot with booking id  <strong>'+x+'  </strong> was <strong>NOT FOUND<strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></center>'
+					}console.log("the slot searched was "+data);
 			},
 			error: function(data) {
 				console.log('Error Occured bro!');

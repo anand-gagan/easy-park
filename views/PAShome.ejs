@@ -8,6 +8,19 @@
  			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script type="text/javascript">function abc(){
+	        var naml=document.loginform.nam.value;
+	        var passl=document.loginform.pass.value;
+	        if(naml == "admin" && passl == "admin123")
+	        {}
+	        else
+	        {
+	        	document.getElementById("abcdef").innerHTML="Wrong credentials Please Recheck";
+	        	document.loginform.pass.value="";
+	        	document.loginform.nam.value="";
+	        }	
+			}
+		</script>
 			 <title>PAS- Parking Assistance System</title>
      </head>
      <body>
@@ -148,10 +161,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="/admin-page">
+        <form method="post" action="/admin-page" onsubmit="abc()" name="loginform">
         	<input  type="text" name="nam" class="form-control" placeholder="Enter Username" required><br>
         	<input type="password" name="pass" class="form-control" placeholder="Enter Password" required><br>
         	<button type="submit" class="btn btn-outline-secondary">Login</button>
+        	<p id="abcdef" style="color: red"></p>
         </form>
       </div>
     </div>
